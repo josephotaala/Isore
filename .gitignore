@@ -1,0 +1,22 @@
+# Local Python environment
+.venv/
+venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Local configuration and database
+.env
+.env.*
+!.env.example
+*.sqlite3
+
+# Generated Django assets
+staticfiles/
+
+# User-uploaded media
+media/
+
+# Editor and tooling files
+.vscode/

@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: osore
+    runtime: python
+    rootDir: Osore
+    buildCommand: pip install -r requirements-render.txt && python manage.py migrate && python manage.py collectstatic --no-input
+    startCommand: gunicorn Osore.wsgi:application
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_ALLOWED_HOSTS
+        value: "*"
